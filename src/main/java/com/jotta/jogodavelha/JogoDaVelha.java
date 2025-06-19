@@ -1,5 +1,7 @@
 package com.jotta.jogodavelha;
 
+import java.util.Random;
+
 /**
  *
  * @author fantasma
@@ -8,6 +10,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JogoDaVelha.class.getName());
     private final Intermediario inter;
+    private final Random gerador;
     private String letra;
     private boolean ativa1=true, ativa2=true, ativa3=true,
                     ativa4=true, ativa5=true, ativa6=true,
@@ -18,6 +21,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
     public JogoDaVelha() {
         this.inter = new Intermediario();
         initComponents();
+        this.gerador = new Random();
         
     }
 
@@ -192,6 +196,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
             inter.principal(0, 0, letra);
             verificaFimJogo();
             ativa1=false;
+            verificarVezJogar();
         }   
     }//GEN-LAST:event_btn1ActionPerformed
 
@@ -203,6 +208,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
             inter.principal(0, 1, letra);
             verificaFimJogo();
             ativa2=false;
+            verificarVezJogar();
         }  
     }//GEN-LAST:event_btn2ActionPerformed
 
@@ -214,6 +220,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
             inter.principal(0, 2, letra);
             verificaFimJogo();
             ativa3=false;
+            verificarVezJogar();
         }   
     }//GEN-LAST:event_btn3ActionPerformed
 
@@ -225,6 +232,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
             inter.principal(1, 0, letra);
             verificaFimJogo();
             ativa4=false;
+            verificarVezJogar();
         }
     }//GEN-LAST:event_btn4ActionPerformed
 
@@ -236,6 +244,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
             inter.principal(1, 1, letra);
             verificaFimJogo();
             ativa5=false;
+            verificarVezJogar();
         }   
     }//GEN-LAST:event_btn5ActionPerformed
 
@@ -247,6 +256,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
             inter.principal(1, 2, letra);
             verificaFimJogo();
             ativa6=false;
+            verificarVezJogar();
         }
     }//GEN-LAST:event_btn6ActionPerformed
 
@@ -258,6 +268,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
             inter.principal(2, 0, letra);
             verificaFimJogo();
             ativa7=false;
+            verificarVezJogar();
         }
     }//GEN-LAST:event_btn7ActionPerformed
 
@@ -269,6 +280,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
             inter.principal(2, 1, letra);
             verificaFimJogo();
             ativa8=false;
+            verificarVezJogar();
         }
     }//GEN-LAST:event_btn8ActionPerformed
 
@@ -280,6 +292,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
             inter.principal(2, 2, letra);
             verificaFimJogo();
             ativa9=false;
+            verificarVezJogar();
         }
     }//GEN-LAST:event_btn9ActionPerformed
     
@@ -292,6 +305,66 @@ public class JogoDaVelha extends javax.swing.JFrame {
                 lblSaida.setText("O Jogador "+vencedor+" é o vencedor!");
             }
             
+        }
+    }
+    
+    private void robo(){
+        int numAleatorio;
+        while(true){
+            numAleatorio = gerador.nextInt(9)+1;
+            if(numAleatorio==1){
+                if(ativa1){
+                    btn1.doClick();
+                    break;
+                }
+            }else if(numAleatorio==2){
+                if(ativa2){
+                    btn2.doClick();
+                    break;
+                }
+            }else if(numAleatorio==3){
+                if(ativa3){
+                    btn3.doClick();
+                    break;
+                }
+            }else if(numAleatorio==4){
+                if(ativa4){
+                    btn4.doClick();
+                    break;
+                }
+            }else if(numAleatorio==5){
+                if(ativa5){
+                    btn5.doClick();
+                    break;
+                }
+            }else if(numAleatorio==6){
+                if(ativa6){
+                    btn6.doClick();
+                    break;
+                }
+            }else if(numAleatorio==7){
+                if(ativa7){
+                    btn7.doClick();
+                    break;
+                }
+            }else if(numAleatorio==8){
+                if(ativa8){
+                    btn8.doClick();
+                    break;
+                }
+            }else if(numAleatorio==9){
+                if(ativa9){
+                    btn9.doClick();
+                    break;
+                }
+            }
+        }
+    }
+    
+    private void verificarVezJogar(){
+        String simbolo = inter.getSimbolo();
+        if(simbolo.equals("X") && !inter.getFimJogo()){
+            robo();
         }
     }
     
