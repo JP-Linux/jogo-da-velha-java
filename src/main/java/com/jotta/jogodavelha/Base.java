@@ -3,14 +3,15 @@ package com.jotta.jogodavelha;
 
 /**
  *
- * @author fantasma
+ * @author Jorge Paulo Santos
  */
-public class Base {
+public final class Base {
     private final int[][] tabuleiro;
     private int contador, coluna, num;
     
     public Base() {
-        this.tabuleiro = new int[][]{{-1,-1,-1}, {-1, -1, -1}, {-1, -1, -1}};
+        this.tabuleiro = new int[3][3];
+        restauraTabuleiro();
         this.num=0;
     }
     
@@ -48,7 +49,6 @@ public class Base {
                             }
                         }
                     }
-                    
                 }
                 contador = 0;
             }
@@ -63,7 +63,6 @@ public class Base {
                 }
             }
         }
-        
         return true;
     }
     
@@ -76,10 +75,7 @@ public class Base {
         
         if(tabuleiro[linha][coluna] == -1){
             this.tabuleiro[linha][coluna] = this.num;
-        }else{
-            System.out.println("Já adicionado!");
-        }
-        
+        } 
     }
     
     public void restauraTabuleiro(){
@@ -92,6 +88,5 @@ public class Base {
     
     public int[][] getTabela(){
         return tabuleiro;
-    }
-    
+    }  
 }

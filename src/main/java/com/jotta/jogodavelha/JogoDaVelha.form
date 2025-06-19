@@ -40,14 +40,10 @@
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="boxOponente" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                          <Component id="lblSaida" min="-2" pref="363" max="-2" attributes="0"/>
-                      </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="btn1" min="-2" pref="93" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
@@ -69,6 +65,7 @@
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="btn9" min="-2" pref="93" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="lblSaida" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>

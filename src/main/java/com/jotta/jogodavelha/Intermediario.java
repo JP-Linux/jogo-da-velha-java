@@ -3,7 +3,7 @@ package com.jotta.jogodavelha;
 
 /**
  *
- * @author fantasma
+ * @author Jorge Paulo Santos
  */
 public class Intermediario{
     //private final Main grafico;
@@ -19,9 +19,6 @@ public class Intermediario{
         this.fimDoJogo = false;
         this.base = new Base();
         this.contador = 0;
-        
-
-        //this.grafico = new Main();
     }
     
     public void principal(int linha, int coluna, String letra){
@@ -42,7 +39,6 @@ public class Intermediario{
     }
     
     public String trocaSimbolo(){
-        
         if(!fimDoJogo){
             if(this.contador % 2 == 0){
                 simbolo = "X";
@@ -50,8 +46,7 @@ public class Intermediario{
             }else{
                 simbolo = "O";
                 return simbolo;
-            }
-             
+            } 
         }
         return "";
     }
@@ -63,6 +58,7 @@ public class Intermediario{
         this.simbolo=null;
         this.fimDoJogo = false;
     }
+    
     public String getVencedor(){
         return this.vencedor;
     }
@@ -77,6 +73,4 @@ public class Intermediario{
     public String getSimbolo(){
         return this.simbolo;
     }
-    
-    
 }

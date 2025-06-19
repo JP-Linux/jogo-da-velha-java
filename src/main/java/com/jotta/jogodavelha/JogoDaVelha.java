@@ -1,10 +1,11 @@
 package com.jotta.jogodavelha;
 
+import java.awt.Color;
 import java.util.Random;
 
 /**
  *
- * @author fantasma
+ * @author Jorge Paulo Santos
  */
 public class JogoDaVelha extends javax.swing.JFrame {
     
@@ -164,13 +165,10 @@ public class JogoDaVelha extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(lblOponente, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(3, 3, 3)
-                            .addComponent(boxOponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(6, 6, 6)
-                            .addComponent(lblSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(boxOponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
@@ -188,7 +186,8 @@ public class JogoDaVelha extends javax.swing.JFrame {
                                 .addGap(30, 30, 30)
                                 .addComponent(btn8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
-                                .addComponent(btn9, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(btn9, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblSaida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(10, 10, 10))
         );
         layout.setVerticalGroup(
@@ -235,6 +234,11 @@ public class JogoDaVelha extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(ativa1){
             letra = inter.trocaSimbolo();
+            btn1.setForeground(
+                "X".equals(letra)               
+                  ? Color.RED                  
+                  : Color.BLUE                 
+                );
             btn1.setText(letra);
             inter.principal(0, 0, letra);
             verificaFimJogo();
@@ -247,6 +251,11 @@ public class JogoDaVelha extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(ativa2){
             letra = inter.trocaSimbolo();
+            btn2.setForeground(
+                "X".equals(letra)               
+                  ? Color.RED                  
+                  : Color.BLUE                 
+                );
             btn2.setText(letra);
             inter.principal(0, 1, letra);
             verificaFimJogo();
@@ -259,6 +268,11 @@ public class JogoDaVelha extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(ativa3){
             letra = letra = inter.trocaSimbolo();
+            btn3.setForeground(
+                "X".equals(letra)               
+                  ? Color.RED                  
+                  : Color.BLUE                 
+                );
             btn3.setText(letra);
             inter.principal(0, 2, letra);
             verificaFimJogo();
@@ -271,6 +285,11 @@ public class JogoDaVelha extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(ativa4){
             letra = inter.trocaSimbolo();
+            btn4.setForeground(
+                "X".equals(letra)               
+                  ? Color.RED                  
+                  : Color.BLUE                 
+                );
             btn4.setText(letra);
             inter.principal(1, 0, letra);
             verificaFimJogo();
@@ -283,6 +302,11 @@ public class JogoDaVelha extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(ativa5){
             letra = inter.trocaSimbolo();
+            btn5.setForeground(
+                "X".equals(letra)               
+                  ? Color.RED                  
+                  : Color.BLUE                 
+                );
             btn5.setText(letra);
             inter.principal(1, 1, letra);
             verificaFimJogo();
@@ -295,6 +319,11 @@ public class JogoDaVelha extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(ativa6){
             letra = inter.trocaSimbolo();
+            btn6.setForeground(
+                "X".equals(letra)               
+                  ? Color.RED                  
+                  : Color.BLUE                 
+                );
             btn6.setText(letra);
             inter.principal(1, 2, letra);
             verificaFimJogo();
@@ -307,6 +336,11 @@ public class JogoDaVelha extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(ativa7){
             letra = inter.trocaSimbolo();
+            btn7.setForeground(
+                "X".equals(letra)               
+                  ? Color.RED                  
+                  : Color.BLUE                 
+                );
             btn7.setText(letra);
             inter.principal(2, 0, letra);
             verificaFimJogo();
@@ -319,6 +353,11 @@ public class JogoDaVelha extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(ativa8){
             letra = inter.trocaSimbolo();
+            btn8.setForeground(
+                "X".equals(letra)               
+                  ? Color.RED                  
+                  : Color.BLUE                 
+                );
             btn8.setText(letra);
             inter.principal(2, 1, letra);
             verificaFimJogo();
@@ -331,6 +370,11 @@ public class JogoDaVelha extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(ativa9){
             letra = inter.trocaSimbolo();
+            btn9.setForeground(
+                "X".equals(letra)               
+                  ? Color.RED                  
+                  : Color.BLUE                 
+                );
             btn9.setText(letra);
             inter.principal(2, 2, letra);
             verificaFimJogo();
@@ -343,8 +387,14 @@ public class JogoDaVelha extends javax.swing.JFrame {
         String vencedor = inter.getVencedor();
         if(inter.getFimJogo()){
             if("e".equals(vencedor)){
+                lblSaida.setForeground(Color.MAGENTA);
                 lblSaida.setText("Empate!!!!");
             }else{
+                lblSaida.setForeground(
+                    "X".equals(vencedor)               
+                      ? Color.RED                  
+                      : Color.BLUE                 
+                    );
                 lblSaida.setText("O Jogador "+vencedor+" é o vencedor!");
             }
             
@@ -353,52 +403,65 @@ public class JogoDaVelha extends javax.swing.JFrame {
     
     private void robo(){
         int numAleatorio;
-        while(true){
+        OUTER:
+        while (true) {
             numAleatorio = gerador.nextInt(9)+1;
-            if(numAleatorio==1){
-                if(ativa1){
-                    btn1.doClick();
-                    break;
+            switch (numAleatorio) {
+                case 1 -> {
+                    if (ativa1) {
+                        btn1.doClick();
+                        break OUTER;
+                    }
                 }
-            }else if(numAleatorio==2){
-                if(ativa2){
-                    btn2.doClick();
-                    break;
+                case 2 -> {
+                    if (ativa2) {
+                        btn2.doClick();
+                        break OUTER;
+                    }
                 }
-            }else if(numAleatorio==3){
-                if(ativa3){
-                    btn3.doClick();
-                    break;
+                case 3 -> {
+                    if (ativa3) {
+                        btn3.doClick();
+                        break OUTER;
+                    }
                 }
-            }else if(numAleatorio==4){
-                if(ativa4){
-                    btn4.doClick();
-                    break;
+                case 4 -> {
+                    if (ativa4) {
+                        btn4.doClick();
+                        break OUTER;
+                    }
                 }
-            }else if(numAleatorio==5){
-                if(ativa5){
-                    btn5.doClick();
-                    break;
+                case 5 -> {
+                    if (ativa5) {
+                        btn5.doClick();
+                        break OUTER;
+                    }
                 }
-            }else if(numAleatorio==6){
-                if(ativa6){
-                    btn6.doClick();
-                    break;
+                case 6 -> {
+                    if (ativa6) {
+                        btn6.doClick();
+                        break OUTER;
+                    }
                 }
-            }else if(numAleatorio==7){
-                if(ativa7){
-                    btn7.doClick();
-                    break;
+                case 7 -> {
+                    if (ativa7) {
+                        btn7.doClick();
+                        break OUTER;
+                    }
                 }
-            }else if(numAleatorio==8){
-                if(ativa8){
-                    btn8.doClick();
-                    break;
+                case 8 -> {
+                    if (ativa8) {
+                        btn8.doClick();
+                        break OUTER;
+                    }
                 }
-            }else if(numAleatorio==9){
-                if(ativa9){
-                    btn9.doClick();
-                    break;
+                case 9 -> {
+                    if (ativa9) {
+                        btn9.doClick();
+                        break OUTER;
+                    }
+                }
+                default -> {
                 }
             }
         }
