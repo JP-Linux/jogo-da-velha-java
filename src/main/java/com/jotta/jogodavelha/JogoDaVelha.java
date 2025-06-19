@@ -46,6 +46,8 @@ public class JogoDaVelha extends javax.swing.JFrame {
         btnReset = new javax.swing.JToggleButton();
         btnSair = new javax.swing.JButton();
         lblSaida = new javax.swing.JLabel();
+        boxOponente = new javax.swing.JComboBox<>();
+        lblOponente = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -129,6 +131,11 @@ public class JogoDaVelha extends javax.swing.JFrame {
         lblSaida.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
         lblSaida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        boxOponente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maquina", "Outro Jogador" }));
+
+        lblOponente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblOponente.setText("Oponente");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -157,6 +164,12 @@ public class JogoDaVelha extends javax.swing.JFrame {
                             .addComponent(btn3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btn9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(boxOponente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblOponente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(124, 124, 124))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,8 +194,11 @@ public class JogoDaVelha extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnReset)
-                    .addComponent(btnSair))
-                .addGap(41, 41, 41))
+                    .addComponent(btnSair)
+                    .addComponent(lblOponente))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(boxOponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10))
         );
 
         pack();
@@ -363,8 +379,10 @@ public class JogoDaVelha extends javax.swing.JFrame {
     
     private void verificarVezJogar(){
         String simbolo = inter.getSimbolo();
-        if(simbolo.equals("X") && !inter.getFimJogo()){
-            robo();
+        if(boxOponente.getSelectedIndex()==0){
+            if(simbolo.equals("X") && !inter.getFimJogo()){
+                robo();
+            }
         }
     }
     
@@ -431,6 +449,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> boxOponente;
     private javax.swing.JButton btn1;
     private javax.swing.JButton btn2;
     private javax.swing.JButton btn3;
@@ -442,6 +461,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
     private javax.swing.JButton btn9;
     private javax.swing.JToggleButton btnReset;
     private javax.swing.JButton btnSair;
+    private javax.swing.JLabel lblOponente;
     private javax.swing.JLabel lblSaida;
     // End of variables declaration//GEN-END:variables
 }
