@@ -380,10 +380,16 @@ public class JogoDaVelha extends javax.swing.JFrame {
     private void verificarVezJogar(){
         String simbolo = inter.getSimbolo();
         if(boxOponente.getSelectedIndex()==0){
+            visualizarComponentes(false);
             if(simbolo.equals("X") && !inter.getFimJogo()){
                 robo();
             }
         }
+    }
+    
+    private void visualizarComponentes(boolean visivel){
+        boxOponente.setVisible(visivel);
+        lblOponente.setVisible(visivel);
     }
     
     private void limparBtn(){
@@ -416,6 +422,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
         limparBtn();
         liberaBtn();
         lblSaida.setText("");
+        visualizarComponentes(true);
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
