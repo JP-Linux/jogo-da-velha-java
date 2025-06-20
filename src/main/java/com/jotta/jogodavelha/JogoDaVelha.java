@@ -1,7 +1,10 @@
 package com.jotta.jogodavelha;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+import javax.swing.JButton;
 
 /**
  *
@@ -13,17 +16,25 @@ public class JogoDaVelha extends javax.swing.JFrame {
     private final Intermediario inter;
     private final Random gerador;
     private String letra, simboloAtivaRobo;
-    private boolean ativa1=true, ativa2=true, ativa3=true,
-                    ativa4=true, ativa5=true, ativa6=true,
-                    ativa7=true, ativa8=true, ativa9=true;
+    private final boolean[] arrayAtiva;
+    private final JButton[] arrayBotoes;
     /**
      * Creates new form Main
      */
     public JogoDaVelha() {
+        initComponents();
         this.inter = new Intermediario();
         this.gerador = new Random();
         this.simboloAtivaRobo = "X";
-        initComponents();
+        arrayAtiva = new boolean[]{
+        true, true, true, true,
+        true, true, true, true, true};
+        arrayBotoes = new JButton[] { 
+        btn1, btn2, btn3, 
+        btn4, btn5, btn6, 
+        btn7, btn8, btn9 
+        };
+        
         
         
     }
@@ -232,153 +243,153 @@ public class JogoDaVelha extends javax.swing.JFrame {
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         // TODO add your handling code here:
-        if(ativa1){
+        if(arrayAtiva[0]){
             letra = inter.trocaSimbolo();
-            btn1.setForeground(
+            arrayBotoes[0].setForeground(
                 "X".equals(letra)               
                   ? Color.RED                  
                   : Color.BLUE                 
                 );
-            btn1.setText(letra);
+            arrayBotoes[0].setText(letra);
             inter.principal(0, 0, letra);
             verificaFimJogo();
-            ativa1=false;
+            arrayAtiva[0]=false;
             verificarVezJogar();
         }   
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
         // TODO add your handling code here:
-        if(ativa2){
+        if(arrayAtiva[1]){
             letra = inter.trocaSimbolo();
-            btn2.setForeground(
+            arrayBotoes[1].setForeground(
                 "X".equals(letra)               
                   ? Color.RED                  
                   : Color.BLUE                 
                 );
-            btn2.setText(letra);
+            arrayBotoes[1].setText(letra);
             inter.principal(0, 1, letra);
             verificaFimJogo();
-            ativa2=false;
+            arrayAtiva[1]=false;
             verificarVezJogar();
         }  
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
         // TODO add your handling code here:
-        if(ativa3){
+        if(arrayAtiva[2]){
             letra = letra = inter.trocaSimbolo();
-            btn3.setForeground(
+            arrayBotoes[2].setForeground(
                 "X".equals(letra)               
                   ? Color.RED                  
                   : Color.BLUE                 
                 );
-            btn3.setText(letra);
+            arrayBotoes[2].setText(letra);
             inter.principal(0, 2, letra);
             verificaFimJogo();
-            ativa3=false;
+            arrayAtiva[2]=false;
             verificarVezJogar();
         }   
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
         // TODO add your handling code here:
-        if(ativa4){
+        if(arrayAtiva[3]){
             letra = inter.trocaSimbolo();
-            btn4.setForeground(
+            arrayBotoes[3].setForeground(
                 "X".equals(letra)               
                   ? Color.RED                  
                   : Color.BLUE                 
                 );
-            btn4.setText(letra);
+            arrayBotoes[3].setText(letra);
             inter.principal(1, 0, letra);
             verificaFimJogo();
-            ativa4=false;
+            arrayAtiva[3]=false;
             verificarVezJogar();
         }
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
         // TODO add your handling code here:
-        if(ativa5){
+        if(arrayAtiva[4]){
             letra = inter.trocaSimbolo();
-            btn5.setForeground(
+            arrayBotoes[4].setForeground(
                 "X".equals(letra)               
                   ? Color.RED                  
                   : Color.BLUE                 
                 );
-            btn5.setText(letra);
+            arrayBotoes[4].setText(letra);
             inter.principal(1, 1, letra);
             verificaFimJogo();
-            ativa5=false;
+            arrayAtiva[4]=false;
             verificarVezJogar();
         }   
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
         // TODO add your handling code here:
-        if(ativa6){
+        if(arrayAtiva[5]){
             letra = inter.trocaSimbolo();
-            btn6.setForeground(
+            arrayBotoes[5].setForeground(
                 "X".equals(letra)               
                   ? Color.RED                  
                   : Color.BLUE                 
                 );
-            btn6.setText(letra);
+            arrayBotoes[5].setText(letra);
             inter.principal(1, 2, letra);
             verificaFimJogo();
-            ativa6=false;
+            arrayAtiva[5]=false;
             verificarVezJogar();
         }
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
         // TODO add your handling code here:
-        if(ativa7){
+        if(arrayAtiva[6]){
             letra = inter.trocaSimbolo();
-            btn7.setForeground(
+            arrayBotoes[6].setForeground(
                 "X".equals(letra)               
                   ? Color.RED                  
                   : Color.BLUE                 
                 );
-            btn7.setText(letra);
+            arrayBotoes[6].setText(letra);
             inter.principal(2, 0, letra);
             verificaFimJogo();
-            ativa7=false;
+            arrayAtiva[6]=false;
             verificarVezJogar();
         }
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
         // TODO add your handling code here:
-        if(ativa8){
+        if(arrayAtiva[7]){
             letra = inter.trocaSimbolo();
-            btn8.setForeground(
+            arrayBotoes[7].setForeground(
                 "X".equals(letra)               
                   ? Color.RED                  
                   : Color.BLUE                 
                 );
-            btn8.setText(letra);
+            arrayBotoes[7].setText(letra);
             inter.principal(2, 1, letra);
             verificaFimJogo();
-            ativa8=false;
+            arrayAtiva[7]=false;
             verificarVezJogar();
         }
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
         // TODO add your handling code here:
-        if(ativa9){
+        if(arrayAtiva[8]){
             letra = inter.trocaSimbolo();
-            btn9.setForeground(
+            arrayBotoes[8].setForeground(
                 "X".equals(letra)               
                   ? Color.RED                  
                   : Color.BLUE                 
                 );
-            btn9.setText(letra);
+            arrayBotoes[8].setText(letra);
             inter.principal(2, 2, letra);
             verificaFimJogo();
-            ativa9=false;
+            arrayAtiva[8]=false;
             verificarVezJogar();
         }
     }//GEN-LAST:event_btn9ActionPerformed
@@ -401,71 +412,23 @@ public class JogoDaVelha extends javax.swing.JFrame {
         }
     }
     
-    private void robo(){
-        int numAleatorio;
-        OUTER:
-        while (true) {
-            numAleatorio = gerador.nextInt(9)+1;
-            switch (numAleatorio) {
-                case 1 -> {
-                    if (ativa1) {
-                        btn1.doClick();
-                        break OUTER;
-                    }
-                }
-                case 2 -> {
-                    if (ativa2) {
-                        btn2.doClick();
-                        break OUTER;
-                    }
-                }
-                case 3 -> {
-                    if (ativa3) {
-                        btn3.doClick();
-                        break OUTER;
-                    }
-                }
-                case 4 -> {
-                    if (ativa4) {
-                        btn4.doClick();
-                        break OUTER;
-                    }
-                }
-                case 5 -> {
-                    if (ativa5) {
-                        btn5.doClick();
-                        break OUTER;
-                    }
-                }
-                case 6 -> {
-                    if (ativa6) {
-                        btn6.doClick();
-                        break OUTER;
-                    }
-                }
-                case 7 -> {
-                    if (ativa7) {
-                        btn7.doClick();
-                        break OUTER;
-                    }
-                }
-                case 8 -> {
-                    if (ativa8) {
-                        btn8.doClick();
-                        break OUTER;
-                    }
-                }
-                case 9 -> {
-                    if (ativa9) {
-                        btn9.doClick();
-                        break OUTER;
-                    }
-                }
-                default -> {
-                }
+    private void robo() {
+        // Cria uma lista de índices disponíveis
+        List<Integer> indicesDisponiveis = new ArrayList<>();
+        for (int i = 0; i < arrayAtiva.length; i++) {
+            if (arrayAtiva[i]) {
+                indicesDisponiveis.add(i);
             }
         }
+
+        // Se houver índices disponíveis, escolhe um aleatoriamente e clica
+        if (!indicesDisponiveis.isEmpty()) {
+            int indiceAleatorio = indicesDisponiveis.get(gerador.nextInt(indicesDisponiveis.size()));
+            arrayBotoes[indiceAleatorio].doClick();
+        }
     }
+    
+    
     
     private void verificarVezJogar(){
         String simbolo = inter.getSimbolo();
@@ -484,26 +447,14 @@ public class JogoDaVelha extends javax.swing.JFrame {
     }
     
     private void limparBtn(){
-        btn1.setText("");
-        btn2.setText("");
-        btn3.setText("");
-        btn4.setText("");
-        btn5.setText("");
-        btn6.setText("");
-        btn7.setText("");
-        btn8.setText("");
-        btn9.setText("");
+        for (JButton botao : arrayBotoes) {
+        botao.setText("");
+        }
     }
     private void liberaBtn(){
-        ativa1=true;
-        ativa2=true;
-        ativa3=true;
-        ativa4=true;
-        ativa5=true;
-        ativa6=true;
-        ativa7=true;
-        ativa8=true;
-        ativa9=true;
+        for(int i=0; i<9; i++){
+            arrayAtiva[i]=true;
+        }
     }
 
     
