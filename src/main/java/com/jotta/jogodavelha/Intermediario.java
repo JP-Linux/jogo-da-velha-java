@@ -1,76 +1,79 @@
-
 package com.jotta.jogodavelha;
 
-/**
- *
- * @author Jorge Paulo Santos
- */
-public class Intermediario{
-    //private final Main grafico;
+public class Intermediario {
     private final Base base;
-    private int contador;
     private boolean fimDoJogo;
-    private String vencedor, simbolo;
+    private String vencedor;
+    private String simboloAtual;
+    private int jogadas;
 
-    
-    public Intermediario(){
-        this.vencedor = null;
-        this.simbolo = null;
-        this.fimDoJogo = false;
+    public Intermediario() {
         this.base = new Base();
-        this.contador = 0;
+        resetar();
     }
     
-    public void principal(int linha, int coluna, String letra){
-        if(!fimDoJogo){
-            base.setTabela(linha, coluna, letra);
-            if(!base.verificaGanhador()){
-                System.out.println("Fim do Jogo!");
-                System.out.println("Vitória do "+letra+ " !");
-                this.fimDoJogo = true;
-                setVencedor(letra);
-            }else if(contador==8){
-                System.out.println("Empate!!!");
-                this.fimDoJogo = true;
-                setVencedor("e");
-            }
-            this.contador +=1;
+    public void registrarJogada(int linha, int coluna, String simbolo) {
+        if (fimDoJogo) return;
+        
+        // Converte símbolo para representação numérica
+        int jogador = "X".equals(simbolo) ? Base.JOGADOR_X : Base.JOGADOR_O;
+        
+        // Registra jogada na base
+        base.setJogada(linha, coluna, jogador);
+        
+        // Verifica vitória
+        if (base.verificaGanhador(jogador)) {
+            finalizarJogo(simbolo);
+            return;
         }
-    }
-    
-    public String trocaSimbolo(){
-        if(!fimDoJogo){
-            if(this.contador % 2 == 0){
-                simbolo = "X";
-                return simbolo;
-            }else{
-                simbolo = "O";
-                return simbolo;
-            } 
+        
+        // Verifica empate
+        if (base.verificaEmpate()) {
+            finalizarJogo("e");
+            return;
         }
-        return "";
+        
+        // Incrementa contador de jogadas
+        jogadas++;
     }
     
-    public void resetar(){
+    public String obterProximoSímbolo() {
+        if (fimDoJogo) return "";
+        
+        if (jogadas == 0) {
+            simboloAtual = "X";
+        } else {
+            simboloAtual = ("X".equals(simboloAtual)) ? "O" : "X";
+        }
+        
+        return simboloAtual;
+    }
+    
+    public final void resetar() {
         base.restauraTabuleiro();
-        this.vencedor=null;
-        this.contador = 0;
-        this.simbolo=null;
-        this.fimDoJogo = false;
+        vencedor = null;
+        simboloAtual = null;
+        fimDoJogo = false;
+        jogadas = 0;
     }
     
-    public String getVencedor(){
-        return this.vencedor;
-    }
-    public void setVencedor(String vencedor){
-        this.vencedor = vencedor;
+    public String getVencedor() {
+        return vencedor;
     }
     
-    public boolean getFimJogo(){
-        return this.fimDoJogo;
+    public boolean getFimJogo() {
+        return fimDoJogo;
     }
     
-    public String getSimbolo(){
-        return this.simbolo;
+    public String getSimboloAtual() {
+        return simboloAtual;
+    }
+    
+    private void finalizarJogo(String resultado) {
+        fimDoJogo = true;
+        vencedor = resultado;
+        System.out.println(resultado.equals("e") 
+            ? "Empate!!!" 
+            : "Vitória do " + resultado + " !");
     }
 }

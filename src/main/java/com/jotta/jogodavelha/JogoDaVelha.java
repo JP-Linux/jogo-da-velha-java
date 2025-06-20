@@ -244,50 +244,44 @@ public class JogoDaVelha extends javax.swing.JFrame {
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         // TODO add your handling code here:
         if(arrayAtiva[0]){
-            letra = inter.trocaSimbolo();
+            String simbolo = inter.obterProximoSímbolo();
             arrayBotoes[0].setForeground(
-                "X".equals(letra)               
-                  ? Color.RED                  
-                  : Color.BLUE                 
-                );
-            arrayBotoes[0].setText(letra);
-            inter.principal(0, 0, letra);
+                "X".equals(simbolo) ? Color.RED : Color.BLUE
+            );
+            arrayBotoes[0].setText(simbolo);
+            inter.registrarJogada(0, 0, simbolo);
             verificaFimJogo();
-            arrayAtiva[0]=false;
+            arrayAtiva[0] = false;
             verificarVezJogar();
-        }   
+        }
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
         // TODO add your handling code here:
         if(arrayAtiva[1]){
-            letra = inter.trocaSimbolo();
+            String simbolo = inter.obterProximoSímbolo();
             arrayBotoes[1].setForeground(
-                "X".equals(letra)               
-                  ? Color.RED                  
-                  : Color.BLUE                 
-                );
-            arrayBotoes[1].setText(letra);
-            inter.principal(0, 1, letra);
+                "X".equals(simbolo) ? Color.RED : Color.BLUE
+            );
+            arrayBotoes[1].setText(simbolo);
+            inter.registrarJogada(0, 1, simbolo);
             verificaFimJogo();
-            arrayAtiva[1]=false;
+            arrayAtiva[1] = false;
             verificarVezJogar();
-        }  
+        }
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
         // TODO add your handling code here:
         if(arrayAtiva[2]){
-            letra = letra = inter.trocaSimbolo();
+            String simbolo = inter.obterProximoSímbolo();
             arrayBotoes[2].setForeground(
-                "X".equals(letra)               
-                  ? Color.RED                  
-                  : Color.BLUE                 
-                );
-            arrayBotoes[2].setText(letra);
-            inter.principal(0, 2, letra);
+                "X".equals(simbolo) ? Color.RED : Color.BLUE
+            );
+            arrayBotoes[2].setText(simbolo);
+            inter.registrarJogada(0, 2, simbolo);
             verificaFimJogo();
-            arrayAtiva[2]=false;
+            arrayAtiva[2] = false;
             verificarVezJogar();
         }   
     }//GEN-LAST:event_btn3ActionPerformed
@@ -295,16 +289,14 @@ public class JogoDaVelha extends javax.swing.JFrame {
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
         // TODO add your handling code here:
         if(arrayAtiva[3]){
-            letra = inter.trocaSimbolo();
+            String simbolo = inter.obterProximoSímbolo();
             arrayBotoes[3].setForeground(
-                "X".equals(letra)               
-                  ? Color.RED                  
-                  : Color.BLUE                 
-                );
-            arrayBotoes[3].setText(letra);
-            inter.principal(1, 0, letra);
+                "X".equals(simbolo) ? Color.RED : Color.BLUE
+            );
+            arrayBotoes[3].setText(simbolo);
+            inter.registrarJogada(1, 0, simbolo);
             verificaFimJogo();
-            arrayAtiva[3]=false;
+            arrayAtiva[3] = false;
             verificarVezJogar();
         }
     }//GEN-LAST:event_btn4ActionPerformed
@@ -312,16 +304,14 @@ public class JogoDaVelha extends javax.swing.JFrame {
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
         // TODO add your handling code here:
         if(arrayAtiva[4]){
-            letra = inter.trocaSimbolo();
+            String simbolo = inter.obterProximoSímbolo();
             arrayBotoes[4].setForeground(
-                "X".equals(letra)               
-                  ? Color.RED                  
-                  : Color.BLUE                 
-                );
-            arrayBotoes[4].setText(letra);
-            inter.principal(1, 1, letra);
+                "X".equals(simbolo) ? Color.RED : Color.BLUE
+            );
+            arrayBotoes[4].setText(simbolo);
+            inter.registrarJogada(1, 1, simbolo);
             verificaFimJogo();
-            arrayAtiva[4]=false;
+            arrayAtiva[4] = false;
             verificarVezJogar();
         }   
     }//GEN-LAST:event_btn5ActionPerformed
@@ -329,16 +319,14 @@ public class JogoDaVelha extends javax.swing.JFrame {
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
         // TODO add your handling code here:
         if(arrayAtiva[5]){
-            letra = inter.trocaSimbolo();
+            String simbolo = inter.obterProximoSímbolo();
             arrayBotoes[5].setForeground(
-                "X".equals(letra)               
-                  ? Color.RED                  
-                  : Color.BLUE                 
-                );
-            arrayBotoes[5].setText(letra);
-            inter.principal(1, 2, letra);
+                "X".equals(simbolo) ? Color.RED : Color.BLUE
+            );
+            arrayBotoes[5].setText(simbolo);
+            inter.registrarJogada(1, 2, simbolo);
             verificaFimJogo();
-            arrayAtiva[5]=false;
+            arrayAtiva[5] = false;
             verificarVezJogar();
         }
     }//GEN-LAST:event_btn6ActionPerformed
@@ -346,16 +334,14 @@ public class JogoDaVelha extends javax.swing.JFrame {
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
         // TODO add your handling code here:
         if(arrayAtiva[6]){
-            letra = inter.trocaSimbolo();
+            String simbolo = inter.obterProximoSímbolo();
             arrayBotoes[6].setForeground(
-                "X".equals(letra)               
-                  ? Color.RED                  
-                  : Color.BLUE                 
-                );
-            arrayBotoes[6].setText(letra);
-            inter.principal(2, 0, letra);
+                "X".equals(simbolo) ? Color.RED : Color.BLUE
+            );
+            arrayBotoes[6].setText(simbolo);
+            inter.registrarJogada(2, 0, simbolo);
             verificaFimJogo();
-            arrayAtiva[6]=false;
+            arrayAtiva[6] = false;
             verificarVezJogar();
         }
     }//GEN-LAST:event_btn7ActionPerformed
@@ -363,16 +349,14 @@ public class JogoDaVelha extends javax.swing.JFrame {
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
         // TODO add your handling code here:
         if(arrayAtiva[7]){
-            letra = inter.trocaSimbolo();
+            String simbolo = inter.obterProximoSímbolo();
             arrayBotoes[7].setForeground(
-                "X".equals(letra)               
-                  ? Color.RED                  
-                  : Color.BLUE                 
-                );
-            arrayBotoes[7].setText(letra);
-            inter.principal(2, 1, letra);
+                "X".equals(simbolo) ? Color.RED : Color.BLUE
+            );
+            arrayBotoes[7].setText(simbolo);
+            inter.registrarJogada(2, 1, simbolo);
             verificaFimJogo();
-            arrayAtiva[7]=false;
+            arrayAtiva[7] = false;
             verificarVezJogar();
         }
     }//GEN-LAST:event_btn8ActionPerformed
@@ -380,16 +364,14 @@ public class JogoDaVelha extends javax.swing.JFrame {
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
         // TODO add your handling code here:
         if(arrayAtiva[8]){
-            letra = inter.trocaSimbolo();
+            String simbolo = inter.obterProximoSímbolo();
             arrayBotoes[8].setForeground(
-                "X".equals(letra)               
-                  ? Color.RED                  
-                  : Color.BLUE                 
-                );
-            arrayBotoes[8].setText(letra);
-            inter.principal(2, 2, letra);
+                "X".equals(simbolo) ? Color.RED : Color.BLUE
+            );
+            arrayBotoes[8].setText(simbolo);
+            inter.registrarJogada(2, 2, simbolo);
             verificaFimJogo();
-            arrayAtiva[8]=false;
+            arrayAtiva[8] = false;
             verificarVezJogar();
         }
     }//GEN-LAST:event_btn9ActionPerformed
@@ -431,7 +413,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
     
     
     private void verificarVezJogar(){
-        String simbolo = inter.getSimbolo();
+        String simbolo = inter.getSimboloAtual();
         visualizarComponentes(false);
         if(boxOponente.getSelectedIndex()==0){
             if(simbolo.equals(simboloAtivaRobo) && !inter.getFimJogo()){
