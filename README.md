@@ -24,6 +24,11 @@ Um clássico Jogo da Velha implementado em Java com interface gráfica usando Sw
 - Java JDK 11 ou superior
 - Maven (opcional)
 
+## 📥 Download
+
+Baixe a versão mais recente:
+- [Jogo da velha (JAR)](https://github.com/JP-Linux/jogo-da-velha-java/releases/download/v1.0.0/JogoDaVelha-1.0-0.jar)
+
 ### Passo a Passo
 1. Clone o repositório:
 ```bash
